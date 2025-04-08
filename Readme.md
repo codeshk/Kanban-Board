@@ -1,4 +1,4 @@
-1.# 📋 Kanban Board - Gerenciador de Tarefas
+# 📋 Kanban Board - Gerenciador de Tarefas
 
 ## ℹ️ Sobre o Projeto
 
