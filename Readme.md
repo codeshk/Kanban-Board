@@ -1,11 +1,10 @@
-## Sobre o Projeto
-Este projeto tem como objetivo criar um sistema Kanban para gerenciamento de tarefas, desenvolvido para praticar conceitos de frontend e organização de workflows.
+1.# 📋 Kanban Board - Gerenciador de Tarefas
 
-## Objetivos
-1. Implementar um quadro Kanban funcional com colunas "A Fazer", "Em Progresso" e "Concluído"
-2. Permitir a criação, edição e movimentação de tarefas entre colunas
-3. Armazenar os dados localmente no navegador
-4. Desenvolver uma interface intuitiva e responsiva
+## ℹ️ Sobre o Projeto
 
-## Tecnologias
-TBD
+Este projeto consiste em um sistema Kanban interativo para gerenciamento de tarefas, desenvolvido com o objetivo de:
+
+- Praticar conceitos fundamentais de desenvolvimento frontend
+- Implementar técnicas modernas de organização de workflows
+- Criar uma ferramenta produtiva e intuitiva para gestão de atividades
+
