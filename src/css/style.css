@@ -171,6 +171,10 @@ body {
    object-fit: cover;
 }
 
+.dragging {
+   opacity: 0.5;
+}
+
 *::-webkit-scrollbar{
    width: 8px;
 }
