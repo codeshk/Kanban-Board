@@ -12,16 +12,21 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
-   background: linear-gradient(90deg, #a5b4fc, #93c5fd);
+   background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 50%, #DDD6FE 100%);
+   padding: 10px;
 }
 
 .kanban {
    display: flex;
    gap: 14px;
    padding: 24px;
-   width: 100%;
-   height: 90vh;
+   width: auto;
+   max-width: 95%;
+   height: 95vh;
    overflow-x: auto;
+   background-color: rgba(255, 255, 255, 0.7);
+   border-radius: 16px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .kanban-column {
@@ -37,6 +42,8 @@ body {
    overflow: hidden;
    position: relative;
    min-width: 252px;
+   border: 1px solid rgba(0, 0, 0, 0.08); 
+   border-top: none;
 }
 
 .kanban-column::after {
@@ -46,18 +53,27 @@ body {
    width: 100%;
    top: 0;
    left: 0;
+   border-radius: 12px 12px 0 0;
 }
 
 .kanban-column[data-id="1"]::after {
-   background-color: #d573b6;
+   background-color: #6B7280;
 }
 
 .kanban-column[data-id="2"]::after {
-   background-color: #fea065;
+   background-color: #3B82F6;
 }
 
 .kanban-column[data-id="3"]::after {
-   background-color: #6ed0bc;
+   background-color: #F59E0B;
+}
+
+.kanban-column[data-id="4"]::after {
+   background-color: #8B5CF6;
+}
+
+.kanban-column[data-id="5"]::after {
+   background-color: #10B981;
 }
 
 .kanban-title{
@@ -95,9 +111,21 @@ body {
    background-color: #fff;
    border-radius: 14px;
    padding: 10px;
-   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.1);
    cursor: pointer;
+   
+   border: 1px solid #EDE9FE;
+   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+   transition: all 0.2s ease; 
 }
+
+.kanban-card:hover {
+   border-color: #DDD6FE;
+   box-shadow: 
+     0 2px 4px 0 rgba(0, 0, 0, 0.08),
+     inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+   transform: translateY(-1px);
+}
+
 
 .badge {
    color: #fff;
@@ -110,12 +138,15 @@ body {
 
 .badge.high{
    background-color: #d573b6;
+   border: 1px solid rgba(213, 115, 182, 0.3);
 }
 .badge.medium{
    background-color: #fea065;
+   border: 1px solid rgba(254, 160, 101, 0.3);
 }
 .badge.low{
    background-color: #92a5fb;
+   border: 1px solid rgba(146, 165, 251, 0.3);
 }
 
 .card-infos{
@@ -145,11 +176,11 @@ body {
 }
 
 *::-webkit-scrollbar-track{
-   background-color: #eaeffa;
+   background-color: #F5F3FF;
    border-radius: 8px;
 }
 
 *::-webkit-scrollbar-thumb{
-   background-color: #b7d3fb;
+   background-color: #DDD6FE;
    border-radius: 20px;
 }
