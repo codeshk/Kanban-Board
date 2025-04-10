@@ -117,3 +117,26 @@ body {
 .badge.low{
    background-color: #92a5fb;
 }
+
+.card-infos{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.card-icons{
+   display: flex;
+   gap: 18px;
+}
+
+.card-icons i{
+   color: #a8a8aa;
+}
+
+.user img{
+   width: 42px;
+   height: 42px;
+   border-radius: 100%;
+   object-fit: cover;
+}
+
