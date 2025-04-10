@@ -66,8 +66,54 @@ body {
 }
 
 .kanban-title h2 {
-   font-size 18px;
+   font-size: 18px;
    color: #4b5563;
    font-weight: 600;
 }
 
+.add-card {
+   color: #4b5563;
+   font-size: 20px;
+   background-color: transparent;
+   cursor: pointer;
+   border: none;
+}
+
+.kanban-cards {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   height: 100%;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+.kanban-card {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   background-color: #fff;
+   border-radius: 14px;
+   padding: 10px;
+   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+}
+
+.badge {
+   color: #fff;
+   background-color: #93c5fd;
+   width: fit-content;
+   font-size: 12px;
+   padding: 4px 8px;
+   border-radius: 12px;
+}
+
+.badge.high{
+   background-color: #d573b6;
+}
+.badge.medium{
+   background-color: #fea065;
+}
+.badge.low{
+   background-color: #92a5fb;
+}
