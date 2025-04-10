@@ -36,6 +36,7 @@ body {
    padding: 12px;
    overflow: hidden;
    position: relative;
+   min-width: 252px;
 }
 
 .kanban-column::after {
@@ -59,4 +60,14 @@ body {
    background-color: #6ed0bc;
 }
 
+.kanban-title{
+   display: flex;
+   justify-content: space-between;
+}
+
+.kanban-title h2 {
+   font-size 18px;
+   color: #4b5563;
+   font-weight: 600;
+}
 
