@@ -126,6 +126,10 @@ body {
    transform: translateY(-1px);
 }
 
+.cards-hover {
+   background-color: #eaeffa;
+}
+
 
 .badge {
    color: #fff;

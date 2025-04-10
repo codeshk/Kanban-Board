@@ -8,3 +8,16 @@ document.querySelectorAll('.kanban-card').forEach(card => {
    })
 })
 
+document.querySelectorAll('.kanban-cards').forEach(column => {
+   column.addEventListener('dragover', e => {
+      e.preventDefault();
+
+      e.currentTarget.classList.add('cards-hover');
+   })
+
+   column.addEventListener('dragleave', e => {
+      e.preventDefault();
+
+      e.currentTarget.classList.remove('cards-hover');
+   })
+})
