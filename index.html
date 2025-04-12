@@ -214,7 +214,71 @@
             </div>
          </div>
       </div>
+      <!-- Popup de criação/edição -->
+<div id="card-modal" class="modal">
+   <div class="modal-content">
+     <span class="close-modal">&times;</span>
+     <h2 id="modal-title">Novo Card</h2>
+     <form id="card-form">
+       <div class="form-group">
+         <label for="card-name">Nome do Card</label>
+         <input type="text" id="card-name" required>
+       </div>
+       
+       <div class="form-group">
+         <label for="card-description">Descrição</label>
+         <textarea id="card-description" rows="3"></textarea>
+       </div>
+       
+       <div class="form-group">
+         <label for="card-priority">Prioridade</label>
+         <select id="card-priority" required>
+           <option value="high">Alta</option>
+           <option value="medium">Média</option>
+           <option value="low">Baixa</option>
+         </select>
+       </div>
+       
+       <div class="form-group">
+         <label for="card-assignee">Responsável</label>
+         <select id="card-assignee">
+           <option value="default.png">Sem responsável</option>
+           <option value="user1.png">João</option>
+           <option value="user2.png">Maria</option>
+           <option value="user3.png">Carlos</option>
+         </select>
+       </div>
+       
+       <div class="form-group">
+         <label for="card-due-date">Data de Entrega</label>
+         <input type="date" id="card-due-date">
+       </div>
+       
+       <button type="submit" class="save-btn">Salvar</button>
+     </form>
+   </div>
+ </div>
+ 
+ <!-- Popup de visualização -->
+ <div id="view-modal" class="modal">
+   <div class="modal-content">
+     <span class="close-modal">&times;</span>
+     <h2 id="view-card-name">Detalhes do Card</h2>
+     
+     <div class="card-details">
+       <p><strong>Prioridade:</strong> <span id="view-card-priority"></span></p>
+       <p><strong>Descrição:</strong></p>
+       <p id="view-card-description"></p>
+       <p><strong>Responsável:</strong> <span id="view-card-assignee"></span></p>
+       <p><strong>Data de Entrega:</strong> <span id="view-card-due-date"></span></p>
+     </div>
+     
+     <button id="edit-card-btn" class="edit-btn">Editar</button>
+     <button id="delete-card-btn" class="delete-btn">Excluir</button>
+   </div>
+ </div>
    </main>
+   
    <script src="./src/js/script.js"></script>
 </body>
 </html>
