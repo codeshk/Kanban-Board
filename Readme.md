@@ -12,9 +12,11 @@ Este projeto consiste em um sistema Kanban interativo para gerenciamento de tare
 
 #### Funcionalidades Básicas
 - [ ] Implementar quadro Kanban com colunas:
-  - `A Fazer`
-  - `Em Progresso` 
-  - `Concluído`
+  - `Backlog`
+  - `To-do` 
+  - `In Progress`
+  - `Review/Approval`
+  - `Done`
 - [ ] Permitir operações CRUD em tarefas:
   - Criar novas tarefas
   - Editar conteúdo existente
@@ -22,7 +24,7 @@ Este projeto consiste em um sistema Kanban interativo para gerenciamento de tare
   - Remover tarefas
 
 #### Armazenamento
-- [ ] Utilizar `localStorage` para persistência de dados no navegador
+- TBD
 
 #### Interface
 - [ ] Desenvolver layout responsivo
