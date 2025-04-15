@@ -442,3 +442,12 @@ body {
    border-radius: 50%;
    object-fit: cover;
  }
+
+ .kanban-cards:empty::after {
+   content: "Nenhum card nesta coluna";
+   display: block;
+   color: #9CA3AF;
+   text-align: center;
+   padding: 20px;
+   font-size: 14px;
+ }
