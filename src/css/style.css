@@ -394,3 +394,51 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid #F3F4F6;
 }
+
+/* Autocomplete Styles */
+.autocomplete {
+   position: relative;
+ }
+ 
+ .autocomplete input {
+   width: 100%;
+   padding: 12px 14px;
+   border: 1px solid #E5E7EB;
+   border-radius: 8px;
+   font-size: 14px;
+   background-color: #F9FAFB;
+ }
+ 
+ .suggestions {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   right: 0;
+   max-height: 200px;
+   overflow-y: auto;
+   background: white;
+   border: 1px solid #E5E7EB;
+   border-radius: 0 0 8px 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   z-index: 10;
+   display: none;
+ }
+ 
+ .suggestion-item {
+   padding: 10px 15px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+ }
+ 
+ .suggestion-item:hover {
+   background-color: #F3F4F6;
+ }
+ 
+ .suggestion-item img {
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   object-fit: cover;
+ }
