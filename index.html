@@ -241,12 +241,12 @@
        
        <div class="form-group">
          <label for="card-assignee">Responsável</label>
-         <select id="card-assignee">
-           <option value="default.png">Sem responsável</option>
-           <option value="user1.png">João</option>
-           <option value="user2.png">Maria</option>
-           <option value="user3.png">Carlos</option>
-         </select>
+         <div class="autocomplete">
+            <input type="text" id="card-assignee-input" placeholder="Digite o nome do responsável">
+            <div class="suggestions"></div>
+          </div>
+          <input type="hidden" id="card-assignee" value="default.png">
+          <input type="hidden" id="card-assignee-name" value="">
        </div>
        
        <div class="form-group">
