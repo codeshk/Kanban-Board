@@ -9,274 +9,136 @@
 </head>
 <body>
    <main class="kanban">
-      <!-- Column 1 -->
+      <!-- Column 1 - Backlog -->
       <div class="kanban-column" data-id="1">
          <div class="kanban-title">
-            <h2>
-               Backlog
-            </h2>
-
+            <h2>Backlog</h2>
             <button class="add-card">
                <i class="fa-solid fa-plus"></i>
             </button>
          </div>
          <div class="kanban-cards">
-            <div class="kanban-card" draggable="true">
-               <div class="badge high">
-                  <span>
-                     High Priority
-                  </span>
-               </div>
-               <p class="card-title">
-                  Test
-               </p>
-
-               <div class="card-infos">
-                  <div class="card-icons">
-                     <p>
-                        <i class="fa-regular fa-comment"></i>
-                        1
-                     </p>
-                     <p>
-                        <i class="fa-solid fa-paperclip"></i>
-                        1
-                     </p>
-                  </div>
-
-                  <div class="user">
-                     <img src="./src/images/default.png" alt="avatar">
-                  </div>
-               </div>
-            </div>
+            <!-- Cards serão adicionados dinamicamente aqui -->
          </div>
       </div>
-      <!-- Column 2 -->
+
+      <!-- Column 2 - To-Do -->
       <div class="kanban-column" data-id="2">
          <div class="kanban-title">
-            <h2>
-               To-Do
-            </h2>
-
+            <h2>To-Do</h2>
             <button class="add-card">
                <i class="fa-solid fa-plus"></i>
             </button>
          </div>
          <div class="kanban-cards">
-            <div class="kanban-card" draggable="true">
-               <div class="badge high">
-                  <span>
-                     High Priority
-                  </span>
-               </div>
-               <p class="card-title">
-                  Test
-               </p>
-
-               <div class="card-infos">
-                  <div class="card-icons">
-                     <p>
-                        <i class="fa-regular fa-comment"></i>
-                        1
-                     </p>
-                     <p>
-                        <i class="fa-solid fa-paperclip"></i>
-                        1
-                     </p>
-                  </div>
-
-                  <div class="user">
-                     <img src="./src/images/default.png" alt="avatar">
-                  </div>
-               </div>
-            </div>
+            <!-- Cards serão adicionados dinamicamente aqui -->
          </div>
       </div>
-      <!-- Column 3 -->
+
+      <!-- Column 3 - In Progress -->
       <div class="kanban-column" data-id="3">
          <div class="kanban-title">
-            <h2>
-               In Progress
-            </h2>
-
+            <h2>In Progress</h2>
             <button class="add-card">
                <i class="fa-solid fa-plus"></i>
             </button>
          </div>
          <div class="kanban-cards">
-            <div class="kanban-card" draggable="true">
-               <div class="badge low">
-                  <span>
-                     Low Priority
-                  </span>
-               </div>
-               <p class="card-title">
-                  Test
-               </p>
-
-               <div class="card-infos">
-                  <div class="card-icons">
-                     <p>
-                        <i class="fa-regular fa-comment"></i>
-                        1
-                     </p>
-                     <p>
-                        <i class="fa-solid fa-paperclip"></i>
-                        1
-                     </p>
-                  </div>
-
-                  <div class="user">
-                     <img src="./src/images/default.png" alt="avatar">
-                  </div>
-               </div>
-            </div>
+            <!-- Cards serão adicionados dinamicamente aqui -->
          </div>
       </div>
-      <!-- Column 4 -->
+
+      <!-- Column 4 - Review/Approval -->
       <div class="kanban-column" data-id="4">
          <div class="kanban-title">
-            <h2>
-               Review/Approval
-            </h2>
-
+            <h2>Review/Approval</h2>
             <button class="add-card">
                <i class="fa-solid fa-plus"></i>
             </button>
          </div>
          <div class="kanban-cards">
-            <div class="kanban-card" draggable="true">
-               <div class="badge high">
-                  <span>
-                     High Priority
-                  </span>
-               </div>
-               <p class="card-title">
-                  Test
-               </p>
-
-               <div class="card-infos">
-                  <div class="card-icons">
-                     <p>
-                        <i class="fa-regular fa-comment"></i>
-                        1
-                     </p>
-                     <p>
-                        <i class="fa-solid fa-paperclip"></i>
-                        1
-                     </p>
-                  </div>
-
-                  <div class="user">
-                     <img src="./src/images/default.png" alt="avatar">
-                  </div>
-               </div>
-            </div>
+            <!-- Cards serão adicionados dinamicamente aqui -->
          </div>
       </div>
-      <!-- Column 5 -->
+
+      <!-- Column 5 - Done -->
       <div class="kanban-column" data-id="5">
          <div class="kanban-title">
-            <h2>
-               Done
-            </h2>
-
+            <h2>Done</h2>
             <button class="add-card">
                <i class="fa-solid fa-plus"></i>
             </button>
          </div>
          <div class="kanban-cards">
-            <div class="kanban-card" draggable="true">
-               <div class="badge medium">
-                  <span>
-                     Medium Priority
-                  </span>
-               </div>
-               <p class="card-title">
-                  Test
-               </p>
+            <!-- Cards serão adicionados dinamicamente aqui -->
+         </div>
+      </div>
 
-               <div class="card-infos">
-                  <div class="card-icons">
-                     <p>
-                        <i class="fa-regular fa-comment"></i>
-                        1
-                     </p>
-                     <p>
-                        <i class="fa-solid fa-paperclip"></i>
-                        1
-                     </p>
-                  </div>
-
-                  <div class="user">
-                     <img src="./src/images/default.png" alt="avatar">
-                  </div>
+      <!-- Popup de criação/edição -->
+      <div id="card-modal" class="modal">
+         <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Novo Card</h2>
+            <form id="card-form">
+               <div class="form-group">
+                  <label for="card-name">Nome do Card</label>
+                  <input type="text" id="card-name" required>
                </div>
+               
+               <div class="form-group">
+                  <label for="card-description">Descrição</label>
+                  <textarea id="card-description" rows="3"></textarea>
+               </div>
+               
+               <div class="form-group">
+                  <label for="card-priority">Prioridade</label>
+                  <select id="card-priority" required>
+                     <option value="high">Alta</option>
+                     <option value="medium">Média</option>
+                     <option value="low">Baixa</option>
+                  </select>
+               </div>
+               
+               <div class="form-group">
+                  <label for="card-assignee-input">Responsável</label>
+                  <div class="autocomplete">
+                     <input type="text" id="card-assignee-input" placeholder="Digite o nome do responsável">
+                     <div class="suggestions"></div>
+                  </div>
+                  <input type="hidden" id="card-assignee" value="default.png">
+                  <input type="hidden" id="card-assignee-name" value="">
+               </div>
+               
+               <div class="form-group">
+                  <label for="card-due-date">Data de Entrega</label>
+                  <input type="date" id="card-due-date">
+               </div>
+               
+               <button type="submit" class="save-btn">Salvar</button>
+            </form>
+         </div>
+      </div>
+      
+      <!-- Popup de visualização -->
+      <div id="view-modal" class="modal">
+         <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="view-card-name">Detalhes do Card</h2>
+            
+            <div class="card-details">
+               <p><strong>Prioridade:</strong> <span id="view-card-priority"></span></p>
+               <p><strong>Descrição:</strong></p>
+               <p id="view-card-description"></p>
+               <p><strong>Responsável:</strong> <span id="view-card-assignee"></span></p>
+               <p><strong>Data de Entrega:</strong> <span id="view-card-due-date"></span></p>
+            </div>
+            
+            <div class="button-group">
+               <button id="edit-card-btn" class="edit-btn">Editar</button>
+               <button id="delete-card-btn" class="delete-btn">Excluir</button>
             </div>
          </div>
       </div>
-      <!-- Popup de criação/edição -->
-<div id="card-modal" class="modal">
-   <div class="modal-content">
-     <span class="close-modal">&times;</span>
-     <h2 id="modal-title">Novo Card</h2>
-     <form id="card-form">
-       <div class="form-group">
-         <label for="card-name">Nome do Card</label>
-         <input type="text" id="card-name" required>
-       </div>
-       
-       <div class="form-group">
-         <label for="card-description">Descrição</label>
-         <textarea id="card-description" rows="3"></textarea>
-       </div>
-       
-       <div class="form-group">
-         <label for="card-priority">Prioridade</label>
-         <select id="card-priority" required>
-           <option value="high">Alta</option>
-           <option value="medium">Média</option>
-           <option value="low">Baixa</option>
-         </select>
-       </div>
-       
-       <div class="form-group">
-         <label for="card-assignee">Responsável</label>
-         <div class="autocomplete">
-            <input type="text" id="card-assignee-input" placeholder="Digite o nome do responsável">
-            <div class="suggestions"></div>
-          </div>
-          <input type="hidden" id="card-assignee" value="default.png">
-          <input type="hidden" id="card-assignee-name" value="">
-       </div>
-       
-       <div class="form-group">
-         <label for="card-due-date">Data de Entrega</label>
-         <input type="date" id="card-due-date">
-       </div>
-       
-       <button type="submit" class="save-btn">Salvar</button>
-     </form>
-   </div>
- </div>
- 
- <!-- Popup de visualização -->
- <div id="view-modal" class="modal">
-   <div class="modal-content">
-     <span class="close-modal">&times;</span>
-     <h2 id="view-card-name">Detalhes do Card</h2>
-     
-     <div class="card-details">
-       <p><strong>Prioridade:</strong> <span id="view-card-priority"></span></p>
-       <p><strong>Descrição:</strong></p>
-       <p id="view-card-description"></p>
-       <p><strong>Responsável:</strong> <span id="view-card-assignee"></span></p>
-       <p><strong>Data de Entrega:</strong> <span id="view-card-due-date"></span></p>
-     </div>
-     
-     <button id="edit-card-btn" class="edit-btn">Editar</button>
-     <button id="delete-card-btn" class="delete-btn">Excluir</button>
-   </div>
- </div>
    </main>
    
    <script src="./src/js/script.js"></script>
