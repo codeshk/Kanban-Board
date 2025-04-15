@@ -132,6 +132,7 @@ function addCardEventsToExistingCards() {
 // Função para abrir modal de criação
 function openCreateModal(column) {
   currentColumn = column;
+  currentCard = null; // Garante que estamos criando um novo card
   document.getElementById('modal-title').textContent = 'Novo Card';
   document.getElementById('card-form').reset();
   document.getElementById('card-assignee').value = 'default.png';
@@ -149,7 +150,11 @@ function openViewModal(card) {
   let priorityText = 'Alta';
   if (badge.classList.contains('medium')) priorityText = 'Média';
   if (badge.classList.contains('low')) priorityText = 'Baixa';
-  document.getElementById('view-card-priority').textContent = priorityText + ' Prioridade';
+  
+  const prioritySpan = document.getElementById('view-card-priority');
+  prioritySpan.textContent = priorityText + ' Prioridade';
+  prioritySpan.className = badge.classList.contains('medium') ? 'medium' : 
+                         badge.classList.contains('low') ? 'low' : 'high';
   
   document.getElementById('view-card-description').textContent = card.dataset.description || 'Sem descrição';
   document.getElementById('view-card-assignee').textContent = card.dataset.assigneeName || 'Sem responsável';
@@ -162,8 +167,6 @@ function openViewModal(card) {
 function closeModals() {
   document.getElementById('card-modal').style.display = 'none';
   document.getElementById('view-modal').style.display = 'none';
-  currentCard = null;
-  currentColumn = null;
 }
 
 // Manipulador do formulário
@@ -192,6 +195,7 @@ function handleFormSubmit(e) {
   }
   
   closeModals();
+  currentCard = null; // Limpa a referência após a submissão
 }
 
 // Cria um novo card
@@ -214,7 +218,7 @@ function createCard(data) {
     ? data.assignee 
     : 'default.png';
 
-    card.innerHTML = `
+  card.innerHTML = `
     <div class="badge ${data.priority}">
       <span>${priorityText}</span>
     </div>
@@ -245,7 +249,12 @@ function updateCard(card, data) {
   badge.querySelector('span').textContent = priorityText;
   
   card.querySelector('.card-title').textContent = data.name;
-  card.querySelector('.user img').src = './src/images/default.png';
+  
+  // Atualiza a imagem corretamente
+  const avatarPath = teamMembers.some(m => m.avatar === data.assignee) 
+    ? data.assignee 
+    : 'default.png';
+  card.querySelector('.user img').src = `./src/images/${avatarPath}`;
   card.querySelector('.user img').alt = data.assigneeName || 'Responsável';
   
   card.dataset.description = data.description || '';
@@ -273,8 +282,10 @@ function addCardEvents(card) {
 
 // Manipulador do botão Editar
 function handleEditCard() {
-  closeModals();
+  // Fecha apenas o modal de visualização
+  document.getElementById('view-modal').style.display = 'none';
   
+  // Preenche o formulário de edição
   document.getElementById('modal-title').textContent = 'Editar Card';
   document.getElementById('card-name').value = currentCard.querySelector('.card-title').textContent;
   document.getElementById('card-description').value = currentCard.dataset.description || '';
@@ -293,6 +304,7 @@ function handleEditCard() {
   document.getElementById('card-assignee-name').value = currentCard.dataset.assigneeName || '';
   document.getElementById('card-due-date').value = currentCard.dataset.dueDate || '';
   
+  // Abre o modal de edição
   document.getElementById('card-modal').style.display = 'block';
 }
 
@@ -301,5 +313,6 @@ function handleDeleteCard() {
   if (confirm('Tem certeza que deseja excluir este card?')) {
     currentCard.remove();
     closeModals();
+    currentCard = null;
   }
 }
